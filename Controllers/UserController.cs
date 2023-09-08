@@ -4,6 +4,10 @@ using Auth.Services.IService;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace Auth.Controllers
 {
@@ -13,11 +17,13 @@ namespace Auth.Controllers
     {
         private readonly IUser _user;
         private readonly IMapper _mapper;
+        private readonly IConfiguration _config;
 
-        public UserController(IUser user, IMapper mapper)
+        public UserController(IUser user, IMapper mapper, IConfiguration config)
         {
             _user = user;
             _mapper = mapper;
+            _config = config;
         }
 
         [HttpPost]
@@ -49,12 +55,32 @@ namespace Auth.Controllers
             }
             //i provided the right credentials
             //create token
-            return Ok($"Welcome {existingUser.Name}");
+            var token = CreateToken(existingUser);
+            return Ok(token);
         }
 
         private string CreateToken(User user) 
         {
-            return "";
+            //key
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetValue<string>("TokenSecuirty:SecretKey")));
+            //signing credentials
+            var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            List<Claim> claims = new List<Claim>();
+            claims.Add(new Claim("Names", user.Name));
+            claims.Add(new Claim("Sub", user.Id.ToString()));
+            claims.Add(new Claim("Role", user.Role));
+
+            //create Token
+            var tokenGenerated = new JwtSecurityToken(
+                _config["TokenSecurity:Issuer"],
+                _config["TokenSecurity:Audience"],
+                 signingCredentials: cred,
+                 claims: claims,
+                 expires: DateTime.UtcNow.AddHours(1)
+                );
+            var token = new JwtSecurityTokenHandler().WriteToken(tokenGenerated);
+            return token;
         }
     }
 }
