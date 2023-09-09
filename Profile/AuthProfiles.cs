@@ -8,7 +8,11 @@ namespace Auth.Profiles
     {
         public AuthProfiles()
         {
+            //user
             CreateMap<User,AddUser>().ReverseMap();
+
+            //Product
+            CreateMap<Product, AddProduct>().ReverseMap();  
           
         }
 

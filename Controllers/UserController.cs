@@ -62,7 +62,7 @@ namespace Auth.Controllers
         private string CreateToken(User user) 
         {
             //key
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetValue<string>("TokenSecuirty:SecretKey")));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetValue<string>("TokenSecurity:SecretKey")));
             //signing credentials
             var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 

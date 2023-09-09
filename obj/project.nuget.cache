@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dxX+zasbwdvRAAwS1XOMCtleuZjyGIwGMhZ9mLkTGlzigxoG9SFBqNHmk8SX5Il4w856yBvfsyR+R9zVgt2A7g==",
+  "dgSpecHash": "6q6jY4v/164D7lxOXqiV4YTbCyGfK1TKti8rn+8adLaB18KQFWcoiXThtzJiMsRgBzRe1GFx05uAHb57HnJoHQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\c#\\Auth\\Auth\\Auth.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\brown\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\brown\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\brown\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\brown\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.10\\microsoft.aspnetcore.authentication.jwtbearer.7.0.10.nupkg.sha512",
     "C:\\Users\\brown\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
     "C:\\Users\\brown\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\brown\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

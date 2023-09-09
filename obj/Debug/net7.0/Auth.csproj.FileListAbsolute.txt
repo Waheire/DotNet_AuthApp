@@ -77,3 +77,4 @@ C:\Projects\c#\Auth\Auth\obj\Debug\net7.0\Auth.pdb
 C:\Projects\c#\Auth\Auth\obj\Debug\net7.0\Auth.genruntimeconfig.cache
 C:\Projects\c#\Auth\Auth\obj\Debug\net7.0\ref\Auth.dll
 C:\Projects\c#\Auth\Auth\bin\Debug\net7.0\BCrypt.Net-Next.dll
+C:\Projects\c#\Auth\Auth\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
